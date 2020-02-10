@@ -9,9 +9,12 @@
     "build:core:dev": "sass src/core/reveal.scss dist/revealjs.css",
     "build:theme": "sass src/theme/elte-fi.scss dist/revealjs-elte-fi.min.css -s compressed --no-source-map",
     "build:theme:dev": "sass src/theme/elte-fi.scss dist/revealjs-elte-fi.css",
-    "build": "npm run build:core && npm run build:core:dev && npm run build:theme && npm run build:theme:dev"
+    "build": "npm run build:core && npm run build:core:dev && npm run build:theme && npm run build:theme:dev",
+    "watch:core": "watch \"npm run build:core:dev\" src --interval 2",
+    "watch:theme": "watch \"npm run build:theme:dev\" src --interval 2"
   },
   "devDependencies": {
-    "sass": "^1.25.0"
+    "sass": "^1.25.0",
+    "watch": "^1.0.2"
   }
 }

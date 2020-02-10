@@ -21,40 +21,48 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic");
 
 // Background of the presentation
-$backgroundColor: #2b2b2b;
+$backgroundColor: #ffffff;
+$primaryColor: #517d81;
+$secondaryColor: #7a8174;
+$red: #b10439;
+$yellow: #fdbe12;
+$green: #55b24c;
+$blue: #005597;
 
 // Primary/body text
-$mainFont: "Lato", sans-serif;
-$mainFontSize: 40px;
-$mainColor: #eee;
+$mainFont: "Roboto", sans-serif;
+$mainFontSize: 34px;
+$mainColor: #2b2b2b;
+$darkBackgroundMainColor: #ffffff;
 
 // Vertical spacing between blocks of text
 $blockMargin: 20px;
 
 // Headings
 $headingMargin: 0 0 $blockMargin 0;
-$headingFont: "League Gothic", Impact, sans-serif;
-$headingColor: #eee;
+$headingFont: "Roboto", Impact, sans-serif;
+$headingColor: $secondaryColor;
 $headingLineHeight: 1.2;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingTextShadow: none;
-$headingFontWeight: normal;
+$headingFontWeight: bold;
 $heading1TextShadow: $headingTextShadow;
 
-$heading1Size: 3.77em;
-$heading2Size: 2.11em;
-$heading3Size: 1.55em;
+$heading1Size: 1.5em;
+$heading2Size: 1.25em;
+$heading3Size: 1.1em;
 $heading4Size: 1em;
 
 $codeFont: monospace;
+$codeColor: $secondaryColor;
 
 // Links and actions
-$linkColor: #13daec;
+$linkColor: $primaryColor;
 $linkColorHover: lighten($linkColor, 20%);
 
 // Text selection
-$selectionBackgroundColor: #ff5e99;
+$selectionBackgroundColor: $primaryColor;
 $selectionColor: #fff;
 
 section.has-dark-background {
@@ -65,7 +73,7 @@ section.has-dark-background {
   h4,
   h5,
   h6 {
-    color: #fff;
+    color: $darkBackgroundMainColor;
   }
 }
 
@@ -73,6 +81,174 @@ section.has-dark-background {
 @import "../includes/theme";
 // ---------------------------------------------
 
-// Overrides -----------------------------------
+// Utilities -----------------------------------
 
+.reveal.slide {
+  border-top: solid $primaryColor 10px;
+}
+
+section[data-state="new-section"] {
+  h2 {
+    background: rgba(0, 0, 0, 0.7);
+    border: solid $darkBackgroundMainColor;
+    border-width: 5px 0 5px 0;
+    color: $darkBackgroundMainColor;
+    font-size: $heading1Size;
+    padding: 50px;
+  }
+
+  color: $darkBackgroundMainColor;
+}
+
+.new-section .slide-background.present {
+  background: $primaryColor;
+}
+
+.title {
+  color: $primaryColor;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.columns {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  .column {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    pre {
+      flex-grow: 1;
+
+      code {
+        box-sizing: border-box;
+        height: 100%;
+      }
+    }
+
+    footer {
+      justify-self: flex-end;
+      text-align: center;
+      font-size: 0.75em;
+    }
+  }
+}
+
+.roman-numbered {
+  ol {
+    list-style: upper-roman;
+  }
+}
+
+.timeline {
+  li {
+    list-style: none;
+    position: relative;
+    padding: 0 0 20px 20px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -30px;
+      top: 10px;
+      display: block;
+      box-sizing: border-box;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: $yellow;
+      border: solid $blue 3px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 20px;
+      height: 100%;
+      background: $blue;
+      width: 5px;
+    }
+
+    &:last-of-type::before {
+      display: none;
+    }
+
+    ul {
+      margin-left: 30px;
+      padding-left: 10px;
+
+      li {
+        padding-left: 10px;
+        padding-bottom: 15px;
+        font-size: 0.9em;
+        list-style: square;
+
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+
+        &::before {
+          display: none;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// ---------------------------------------------
+
+// Overrides -----------------------------------
+.reveal {
+  section {
+    code {
+      background: rgba(0, 0, 0, 0.1);
+      border: solid $codeColor 2px;
+      border-radius: 5px;
+      padding: 0 5px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      line-height: 1.1;
+
+      code {
+        font-size: 1.2em;
+        background: none;
+        padding: 10px 15px;
+      }
+    }
+
+    ul {
+      list-style: square;
+
+      ul {
+        list-style: disc;
+      }
+    }
+
+    img {
+      border: solid $primaryColor 3px;
+      max-width: 75vw;
+      max-height: 65vh;
+    }
+  }
+
+  iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
 // ---------------------------------------------
