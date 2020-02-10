@@ -5,10 +5,10 @@
   "author": "Márton Visnovitz <vimtaai@inf.elte.hu>",
   "repository": "github:elte-fi/assets-revealjs-elte-fi",
   "scripts": {
-    "build:core": "sass src/core/reveal.scss dist/reveal.min.css -s compressed --no-source-map",
-    "build:core:dev": "sass src/core/reveal.scss dist/reveal.css",
-    "build:theme": "sass src/theme/elte-fi.scss dist/reveal-elte-fi.min.css -s compressed --no-source-map",
-    "build:theme:dev": "sass src/theme/elte-fi.scss dist/reveal-elte-fi.css",
+    "build:core": "sass src/core/reveal.scss dist/revealjs.min.css -s compressed --no-source-map",
+    "build:core:dev": "sass src/core/reveal.scss dist/revealjs.css",
+    "build:theme": "sass src/theme/elte-fi.scss dist/revealjs-elte-fi.min.css -s compressed --no-source-map",
+    "build:theme:dev": "sass src/theme/elte-fi.scss dist/revealjs-elte-fi.css",
     "build": "npm run build:core && npm run build:core:dev && npm run build:theme && npm run build:theme:dev"
   },
   "devDependencies": {
