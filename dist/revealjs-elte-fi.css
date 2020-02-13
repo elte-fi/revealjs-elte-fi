@@ -2173,6 +2173,11 @@ section[data-state=new-section] h2 {
   font-size: 1.5em;
   padding: 50px;
 }
+section[data-state=new-section] h2 + p {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
 
 .new-section .slide-background.present {
   background: #517d81;

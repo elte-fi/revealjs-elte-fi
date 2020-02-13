@@ -91,6 +91,12 @@ section[data-state="new-section"] {
     color: $darkBackgroundMainColor;
     font-size: $heading1Size;
     padding: 50px;
+
+    & + p {
+      font-size: 1.3em;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
   }
 
   color: $darkBackgroundMainColor;
