@@ -148,7 +148,7 @@ section[data-state="new-section"] {
 }
 
 .timeline {
-  li {
+  > ul > li {
     list-style: none;
     position: relative;
     padding: 0 0 20px 20px;
@@ -160,21 +160,21 @@ section[data-state="new-section"] {
       top: 10px;
       display: block;
       box-sizing: border-box;
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
       border-radius: 50%;
-      background: $yellow;
-      border: solid $blue 3px;
+      background: $primaryColor;
+      border: solid $mainColor 4px;
     }
 
     &::before {
       content: "";
       position: absolute;
-      left: -22px;
+      left: -21px;
       top: 20px;
       height: 100%;
-      background: $blue;
-      width: 5px;
+      background: $primaryColor;
+      width: 7px;
     }
 
     &:last-of-type::before {
@@ -194,9 +194,58 @@ section[data-state="new-section"] {
         &:last-of-type {
           padding-bottom: 0;
         }
+      }
+    }
+  }
 
-        &::before {
-          display: none;
+  &.continuation {
+    > ul > li:first-of-type::before {
+      top: -20px;
+      height: calc(100% + 40px);
+    }
+  }
+
+  &.continued {
+    > ul > li:last-of-type::before {
+      display: block;
+    }
+  }
+}
+
+.tasklist {
+  li {
+    list-style: none;
+    position: relative;
+    padding: 0 0 20px 20px;
+
+    &::after {
+      content: "\f111";
+      font-family: FontAwesome;
+      color: $secondaryColor;
+      font-size: 32px;
+      position: absolute;
+      left: -25px;
+      top: 2px;
+      display: block;
+    }
+
+    &.complete::after {
+      content: "\f058";
+      color: $green;
+    }
+
+    ul {
+      margin-left: 30px;
+      padding-left: 10px;
+
+      li {
+        padding-left: 10px;
+        padding-bottom: 15px;
+        font-size: 0.9em;
+        list-style: square;
+
+        &:last-of-type {
+          padding-bottom: 0;
         }
 
         &::after {
@@ -204,6 +253,23 @@ section[data-state="new-section"] {
         }
       }
     }
+  }
+}
+
+.example {
+  background: lighten($primaryColor, 30%);
+  border: solid $blue 2px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  padding: 15px;
+  width: 90%;
+
+  line-height: 2;
+
+  input {
+    font: inherit;
   }
 }
 
@@ -240,7 +306,7 @@ section[data-state="new-section"] {
 
     img {
       border: solid $primaryColor 3px;
-      max-width: 75vw;
+      max-width: 100%;
       max-height: 65vh;
     }
   }
