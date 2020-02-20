@@ -2158,8 +2158,17 @@ body {
     background-color: #ffffff;
   }
 }
-.reveal.slide {
+.reveal.slide .backgrounds {
   border-top: solid #517d81 10px;
+}
+
+#captcha {
+  bottom: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: monospace;
+  font-size: 50px;
+  left: 20px;
+  position: absolute;
 }
 
 section[data-state=new-section] {

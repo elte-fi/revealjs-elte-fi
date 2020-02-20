@@ -83,6 +83,15 @@ section.has-dark-background {
   border-top: solid $primaryColor 10px;
 }
 
+#captcha {
+  bottom: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: monospace;
+  font-size: 50px;
+  left: 20px;
+  position: absolute;
+}
+
 section[data-state="new-section"] {
   h2 {
     background: rgba(0, 0, 0, 0.7);
