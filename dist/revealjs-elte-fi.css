@@ -2192,7 +2192,8 @@ section[data-state=new-section] h2 + p {
   background: #517d81;
 }
 
-.title {
+.title,
+h1 {
   color: #517d81;
   font-size: 1.7em;
   text-transform: uppercase;
@@ -2215,7 +2216,9 @@ section[data-state=new-section] h2 + p {
 }
 .columns .column pre code {
   box-sizing: border-box;
+  display: block;
   height: 100%;
+  max-height: 100vh;
 }
 .columns .column footer {
   justify-self: flex-end;
@@ -2280,7 +2283,6 @@ section[data-state=new-section] h2 + p {
 
 .tasklist li {
   list-style: none;
-  position: relative;
   padding: 0 0 20px 20px;
 }
 .tasklist li::after {
@@ -2314,6 +2316,28 @@ section[data-state=new-section] h2 + p {
   display: none;
 }
 
+ul li {
+  position: relative;
+}
+ul li input[type=checkbox] {
+  position: absolute;
+  left: -45px;
+  top: 3px;
+}
+ul li input[type=checkbox]::after {
+  content: "";
+  background: #ffffff;
+  font-family: FontAwesome;
+  color: #7a8174;
+  font-size: 32px;
+  position: absolute;
+  display: block;
+}
+ul li input[type=checkbox]:checked::after {
+  content: "";
+  color: #55b24c;
+}
+
 .example {
   background: #a5c4c6;
   border: solid #005597 2px;
@@ -2328,6 +2352,12 @@ section[data-state=new-section] h2 + p {
 .example input {
   font: inherit;
 }
+.example a {
+  color: blue;
+}
+.example a:hover {
+  color: darkblue;
+}
 
 .reveal section code {
   background: rgba(0, 0, 0, 0.1);
@@ -2340,8 +2370,8 @@ section[data-state=new-section] h2 + p {
   line-height: 1.1;
 }
 .reveal section pre code {
-  font-size: 1.2em;
   background: none;
+  font-size: 1.2em;
   padding: 10px 15px;
 }
 .reveal section ul {
