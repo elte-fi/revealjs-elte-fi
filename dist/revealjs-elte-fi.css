@@ -2349,8 +2349,11 @@ ul li input[type=checkbox]:checked::after {
   width: 90%;
   line-height: 2;
 }
-.example input {
+.example input,
+.example button {
   font: inherit;
+  font-size: 25px;
+  padding: 5px 20px;
 }
 .example a {
   color: blue;
