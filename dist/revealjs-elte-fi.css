@@ -2386,7 +2386,7 @@ ul li input[type=checkbox]:checked::after {
 .reveal section img {
   border: solid #517d81 3px;
   max-width: 100%;
-  max-height: 65vh;
+  max-height: 55vh;
 }
 .reveal iframe {
   border: none;
